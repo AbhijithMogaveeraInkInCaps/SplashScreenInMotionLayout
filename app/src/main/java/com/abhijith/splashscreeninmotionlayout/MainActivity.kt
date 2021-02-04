@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
                 override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
                     if(flag) {
                         setTransition(R.id.end, R.id.start)
-//                        setTransitionDuration(2000)
                         transitionToEnd()
                         flag = false
                     }else{
