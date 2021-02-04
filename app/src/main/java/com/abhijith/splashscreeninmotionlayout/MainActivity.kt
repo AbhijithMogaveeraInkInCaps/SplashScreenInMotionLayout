@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
                     if(flag) {
                         setTransition(R.id.end, R.id.start)
 //                        setTransitionDuration(2000)
+                        transitionToEnd()
                         flag = false
                     }else{
                         if(p1==R.id.end){
