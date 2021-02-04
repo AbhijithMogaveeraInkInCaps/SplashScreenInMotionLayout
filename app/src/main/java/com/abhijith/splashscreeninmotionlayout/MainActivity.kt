@@ -1,17 +1,16 @@
 package com.abhijith.splashscreeninmotionlayout
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var flag = true
         setContentView(R.layout.activity_main)
         findViewById<MotionLayout>(R.id.root).apply {
-
             addTransitionListener(object : MotionLayout.TransitionListener {
 
                 override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {
@@ -23,29 +22,28 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
-                    if(flag) {
-                        setTransition(R.id.end, R.id.start)
+                    if (p1 == R.id.end) {
+                        setTransition(R.id.end, R.id.end1)
                         transitionToEnd()
-                        flag = false
-                    }else{
-                        if(p1==R.id.end){
-                            setTransition(R.id.end, R.id.end1)
-                            transitionToEnd()
+                    }
+                    if (p1 == R.id.end1) {
+                        setTransition(R.id.end1, R.id.end2)
+                        transitionToEnd()
+                    }
+                    if (p1 == R.id.end2) {
+                        setTransition(R.id.end2, R.id.end3)
+                        transitionToEnd()
+                    }
+                    if (p1 == R.id.end3) {
+                        setTransition(R.id.end3, R.id.end4)
+                        setTransitionDuration(2000)
+                        transitionToEnd()
+                    }
+                    if (p1 == R.id.end4) {
+                        Intent(context, IntroActivity::class.java).apply {
+                            startActivity(this)
+                            finish()
                         }
-                        if(p1==R.id.end1){
-                            setTransition(R.id.end1, R.id.end2)
-                            transitionToEnd()
-                        }
-                        if(p1==R.id.end2){
-                            setTransition(R.id.end2, R.id.end3)
-                            transitionToEnd()
-                        }
-                        if(p1==R.id.end3){
-                            setTransition(R.id.end3, R.id.end4)
-                            setTransitionDuration(2000)
-                            transitionToEnd()
-                        }
-
                     }
 
                 }
@@ -59,7 +57,30 @@ class MainActivity : AppCompatActivity() {
 
                 }
             })
-            transitionToEnd()
         }
     }
+}
+
+fun msg(id: Int) {
+    when (id) {
+        R.id.start -> {
+            log("Start")
+        }
+        R.id.end1 -> {
+            log("end1")
+        }
+        R.id.end2 -> {
+            log("end2")
+        }
+        R.id.end3 -> {
+            log("end3")
+        }
+        R.id.end4 -> {
+            log("end4")
+        }
+    }
+}
+
+fun log(str: String) {
+    Log.e("piyush", str)
 }
