@@ -4,15 +4,24 @@
 
     <Transition
         motion:constraintSetEnd="@+id/end"
-        motion:motionInterpolator="linear"
-        motion:duration="1000"
+        motion:duration="1600"
         motion:constraintSetStart="@id/start">
         <KeyFrameSet>
 
         </KeyFrameSet>
     </Transition>
+    <Transition
+        motion:constraintSetEnd="@+id/start"
+        motion:duration="1000"
+        motion:constraintSetStart="@id/end">
+        <KeyFrameSet>
 
-    <ConstraintSet android:id="@+id/start"></ConstraintSet>
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+    </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
@@ -68,7 +77,6 @@
     </ConstraintSet>
     <ConstraintSet
         android:id="@+id/end4"
-        motion:duration="500"
         motion:deriveConstraintsFrom="@+id/end3" >
         <Constraint
             android:id="@+id/logo"
@@ -82,4 +90,10 @@
             android:scaleX="200"
             android:scaleY="200" />
     </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/end2"
+        motion:constraintSetEnd="@+id/end3" />
+    <Transition
+        motion:constraintSetStart="@+id/end3"
+        motion:constraintSetEnd="@+id/end4" />
 </MotionScene>
