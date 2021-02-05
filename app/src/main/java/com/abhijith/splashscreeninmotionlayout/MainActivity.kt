@@ -3,6 +3,8 @@ package com.abhijith.splashscreeninmotionlayout
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 
@@ -35,8 +37,12 @@ class MainActivity : AppCompatActivity() {
                         transitionToEnd()
                     }
                     if (p1 == R.id.end3) {
-                        setTransition(R.id.end3, R.id.end4)
-                        transitionToEnd()
+//                        setTransition(R.id.end3, R.id.end4)
+//                        transitionToEnd()
+//                        transitionToStart()
+                        val animZoomOut = AnimationUtils.loadAnimation(this@MainActivity,
+                            R.anim.zoom_out)
+                        findViewById<ImageView>(R.id.logo).startAnimation(animZoomOut)
                     }
                     if (p1 == R.id.end4) {
                         Intent(context, IntroActivity::class.java).apply {
