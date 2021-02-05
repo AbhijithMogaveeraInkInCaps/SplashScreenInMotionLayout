@@ -80,8 +80,8 @@
             motion:layout_constraintVertical_bias="0.5"
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            android:scaleX="200"
-            android:scaleY="200" />
+            android:scaleX="60"
+            android:scaleY="100" />
     </ConstraintSet>
     <Transition
         motion:constraintSetStart="@+id/end2"
