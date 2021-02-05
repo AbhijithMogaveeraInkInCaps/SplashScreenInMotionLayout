@@ -61,26 +61,3 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-fun msg(id: Int) {
-    when (id) {
-        R.id.start -> {
-            log("Start")
-        }
-        R.id.end1 -> {
-            log("end1")
-        }
-        R.id.end2 -> {
-            log("end2")
-        }
-        R.id.end3 -> {
-            log("end3")
-        }
-        R.id.end4 -> {
-            log("end4")
-        }
-    }
-}
-
-fun log(str: String) {
-    Log.e("piyush", str)
-}
