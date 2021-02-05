@@ -85,8 +85,10 @@
     </ConstraintSet>
     <Transition
         motion:constraintSetStart="@+id/end2"
+        motion:duration="1000"
         motion:constraintSetEnd="@+id/end3" />
     <Transition
         motion:constraintSetStart="@+id/end3"
+        motion:duration="4000"
         motion:constraintSetEnd="@+id/end4" />
 </MotionScene>

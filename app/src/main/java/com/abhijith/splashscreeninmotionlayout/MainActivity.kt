@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity() {
                     }
                     if (p1 == R.id.end3) {
                         setTransition(R.id.end3, R.id.end4)
-                        setTransitionDuration(2000)
                         transitionToEnd()
                     }
                     if (p1 == R.id.end4) {
