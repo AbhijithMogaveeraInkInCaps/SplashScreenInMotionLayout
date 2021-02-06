@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/logo_inner_part"/>
+    <item android:drawable="@drawable/logo_out_new"/>
+</layer-list>

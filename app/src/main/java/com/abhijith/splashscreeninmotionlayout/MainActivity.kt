@@ -3,10 +3,13 @@ package com.abhijith.splashscreeninmotionlayout
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,12 +40,15 @@ class MainActivity : AppCompatActivity() {
                         transitionToEnd()
                     }
                     if (p1 == R.id.end3) {
-//                        setTransition(R.id.end3, R.id.end4)
-//                        transitionToEnd()
-//                        transitionToStart()
-                        val animZoomOut = AnimationUtils.loadAnimation(this@MainActivity,
-                            R.anim.zoom_out)
-                        findViewById<ImageView>(R.id.logo).startAnimation(animZoomOut)
+                        setTransition(R.id.end3, R.id.end4)
+                        transitionToEnd()
+//                        findViewById<LinearLayout>(R.id.logo).apply {
+//                            this.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT)
+//                        }
+//                        val animZoomOut = AnimationUtils.loadAnimation(this@MainActivity, R.anim.zoom_out)
+//                        findViewById<ImageView>(R.id.logo_outer).startAnimation(animZoomOut)
+//                        val animZoomOutTwo = AnimationUtils.loadAnimation(this@MainActivity, R.anim.zoom_out_two)
+//                        findViewById<ImageView>(R.id.logo_inner).startAnimation(animZoomOutTwo)
                     }
                     if (p1 == R.id.end4) {
                         Intent(context, IntroActivity::class.java).apply {

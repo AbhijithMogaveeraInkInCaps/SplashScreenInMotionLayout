@@ -8,16 +8,18 @@
     app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity">
 
-    <ImageView
+
+    <com.abhijith.splashscreeninmotionlayout.Logo
         android:id="@+id/logo"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:src="@drawable/logo"
+        android:scaleType="fitStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
